@@ -414,7 +414,6 @@ a{
     text-align: center;
 }
 #scrollingredienti{
-    background-color: #fffae8;
     overflow-x: auto;
     white-space: nowrap;
 }
@@ -424,6 +423,8 @@ a{
     width: 120px;
     display: inline-block;
     color: white;
+    -webkit-box-shadow: 0px 7px 15px -3px rgba(0,0,0,0.88); 
+box-shadow: 0px 7px 15px -3px rgba(0,0,0,0.88);
     text-align: center;
     margin: 15px 7px 11px 7px;
     border-radius: 23px;
