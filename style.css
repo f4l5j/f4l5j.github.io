@@ -17,7 +17,6 @@ body{
 *{
     font-family: 'Montserrat-Medium';
     text-decoration: none;
-    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -396,7 +395,7 @@ a{
     background-color: #f8feff;
     font-family: 'Montserrat-Light';
     border-bottom-right-radius: 50px;
-    box-shadow: 3px 3px 18px 5px rgba(0,0,0,0.42);
+    box-shadow: 3px 3px 18px 5px rgba(0,0,0,0.3);
     transition: 0.5s;
 }  
 .navmenu a{
@@ -668,6 +667,29 @@ a{
     position: absolute;
     height: 22px;
     margin: 3.5px 0px 3.5px 8px;
+}
+.boxfaq{
+    max-width: 75%;
+    margin: 60px auto 0px;
+}
+.faq{
+    margin:20px auto;
+    
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 1px solid #d6d6d662;
+}
+.answer{
+    margin: 14px 0px 14px 0px;
+    font-family: 'Montserrat-Light';
+    text-align: justify;
+}
+#fonte{
+    max-width:75%;
+    margin: auto;
+    font-family: 'Montserrat-Light';
+    text-decoration: none;
+    padding: 0;
 }
 
 /*tabella vermut*/
