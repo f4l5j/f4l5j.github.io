@@ -75,10 +75,3 @@ function toggleFullScreen() {
     }  
   }  
 }
-
-function reviewpresentation() {
-  localStorage.removeItem("slide1Displayed");
-  localStorage.removeItem("slide2Displayed");
-  localStorage.removeItem("slide3Displayed");
-  location.reload();
-}
