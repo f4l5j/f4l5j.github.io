@@ -229,3 +229,11 @@ hr{
     font-family: 'Montserrat-Light';
     text-align: justify;
 }
+.title{
+    color:white;
+    text-align:center;
+}
+iframe{display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
