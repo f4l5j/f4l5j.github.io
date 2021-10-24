@@ -17,6 +17,11 @@ hr{
     margin-bottom: 30px;
     width: 80%;
 }
+iframe{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*menu contestuale*/
 .menu{
@@ -227,13 +232,24 @@ hr{
     color:white;
     margin:50px 20px 0px 20px;
     font-family: 'Montserrat-Light';
-    text-align: left;
+    text-align: justify;
 }
 .title{
     color:white;
     text-align:center;
 }
-iframe{display: block;
+#onecolordesign{
+    max-width:80%;
+    display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
+    border-radius:20px;
+}
+#fonetica{
+    max-width:80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
