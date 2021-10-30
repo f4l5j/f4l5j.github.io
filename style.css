@@ -3,7 +3,9 @@
     font-family: 'Montserrat-Medium';
 }
 body{
-    background-color: #252525;
+    background-image: url("images/bg.jpg");
+    background-attachment: fixed;
+    background-position: center;
     -webkit-tap-highlight-color: transparent;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
