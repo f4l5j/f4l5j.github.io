@@ -75,3 +75,6 @@ function toggleFullScreen() {
     }  
   }  
 }
+function deleteItems() {
+  localStorage.clear();
+}
