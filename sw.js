@@ -1,4 +1,4 @@
-v// On install - caching the application shell
+// On install - caching the application shell
 self.addEventListener('install', function(event) {
     event.waitUntil(
       caches.open('sw-cache').then(function(cache) {
