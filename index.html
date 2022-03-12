@@ -8,12 +8,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#ff0000"/>
     <link rel="manifest" href="manifest.json">
-    <script>
-        //if browser support service worker
-        if('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('sw.js');
-        };
-      </script>
+    <script type="text/javascript">
+        // Verifichiamo se il browser con cui l’utente sta navigando è
+        //ha già attivo un Service Worker
+        if ("serviceWorker" in navigator) {
+          if (navigator.serviceWorker.controller) {
+            console.log("Service Worker attivo trovato. Nessuna necessità di registrarne uno.");
+          } else {
+            // Registriamo il Service Worker se non attivo
+            navigator.serviceWorker.register("sw.js", {
+                scope: "./"
+              })
+              .then(function (reg) {
+                console.log("Un nuovo Service Worker registrato per lo scope: " + reg.scope);
+              });
+          }
+        }
+    </script>
 </head>
 <body>
 
