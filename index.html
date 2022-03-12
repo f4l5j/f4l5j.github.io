@@ -1,87 +1,21 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <title>Cambino Panino</title>
-    <link rel="shortcut icon" href="icons/icon.ico"/>
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My First PWA</title>
     <meta name="theme-color" content="#ff0000"/>
     <link rel="manifest" href="manifest.json">
-    <script type="text/javascript">
-        // Verifichiamo se il browser con cui l’utente sta navigando è
-        //ha già attivo un Service Worker
-        if ("serviceWorker" in navigator) {
-          if (navigator.serviceWorker.controller) {
-            console.log("Service Worker attivo trovato. Nessuna necessità di registrarne uno.");
-          } else {
-            // Registriamo il Service Worker se non attivo
-            navigator.serviceWorker.register("sw.js", {
-                scope: "./"
-              })
-              .then(function (reg) {
-                console.log("Un nuovo Service Worker registrato per lo scope: " + reg.scope);
-              });
-          }
-        }
-    </script>
+    <script>
+        //if browser support service worker
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js');
+        };
+      </script>
 </head>
 <body>
-
-    <!--menu contestuale-->
-    <div class="menu">
-        <ul class="listmenu">
-          <li class="menuoptionfirst" onclick="goBack()">Indietro</li>
-          <li class="menuoption" onclick="goForward()">Avanti</li>
-          <li class="menuoption" onclick="reload()">Ricarica</li>
-          <li class="menuoptionlast" onclick="toggleFullScreen()">Fullscreen</li>
-        </ul>
-    </div>
-
-    <!--navmenu-->
-    <img id="navmenuopenbtn" src="icons/menu.png" onclick="aprinav()" alt="menu">
-    <div id="idnavmenu" class="navmenu">
-      <img id="navmenuclosebtn" src="icons/indietro.png" onclick="chiudinav()" alt="back">
-      <a class="navmenuoption" href="index.html">Home</a>
-      <a class="navmenuoption" href="policy.html">Legalità</a>
-    </div>
-
-    <img id="logo" src="images/logo.png">
-    <h1 id="team">Team</h1>
-    <hr>
-    <p class="mainparag">F4L5J o meglio Cambino Panino è un designer con diversi stili. I titoli attribuibili sarebbero diversi come designer, web designer, web old-owl</p>
-    <hr>
-    <h2 class="title">Significato di F4L5J</h2>
-    <p class="mainparag">Il significato è ancora sconosciuto alla scienza ma si sa che il nome precendente era RDG (re dei games). Attualmente è F4L5J o più corretto in fonetica /fàle/ o /fàlej/</p>
-    <img id="fonetica" src="images/fonetica.png">
-    <hr>
-    <h2 class="title">Stili usati</h2>
-    <p class="mainparag">È specializzato in video brevi e in fatto di stili soprattutto minimal con one color design</p>
-    <img id="onecolordesign" src="images/onecolordesign.png">
-    <hr>
-    <h2 class="title">Server Discord dedicato</h2>
-    <iframe src="https://discord.com/widget?id=685472460312936530&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-    <hr>
-    <h4 id="segui">Seguilo sui social e altre piattaforme</h3>
-    <div id="seguire">
-        <a href="https://www.instagram.com/cambino.panino/"><img id="instagram" src="images/instagram.png"></a>
-        <a href="https://discord.gg/9CWDMfREBK"><img id="discord" src="images/discord.png"></a>
-    </div>
-    <p id="richieste">Per richieste professionali, commerciali o dubbi: f4l5jproject@gmail.com</p>
-
-    <!--cookie alert-->
-    <div class="flexcookies">
-        <div class="cookie-container">
-            <h4 id="cookiescritta">
-                Questo sito usa <a id="linkcookies" href="policy.html">cookie</a> che servono per alcune funzioni<br><br>
-                Accettali per continuare sul sito
-            </h4>
-            <button class="cookie-btn">ACCETTA</button>
-        </div>
-    </div>
-
-    <!--script-->
-    <script src="navnmenu.js"></script>
-    <script src="contextmenu.js"></script>
-    <script src="cookie-slide.js"></script>
+    <h1>PWA</h1>
+    <p>Hello world!</p>
 </body>
+</html>
