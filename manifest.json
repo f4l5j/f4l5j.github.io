@@ -1,14 +1,14 @@
 {
-    "short_name": "PWA1",
-    "name": "My PWA 1st Prototype",
+    "short_name": "OB",
+    "name": "Orgoglio Bresciano",
     "icons": [
       {
-        "src": "/images/icons-192.png",
+        "src": "icons/icon1.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/images/icons-512.png",
+        "src": "icons/icon2.png",
         "type": "image/png",
         "sizes": "512x512"
       }
@@ -16,5 +16,5 @@
     "start_url": "/index.html",
     "background_color": "#000000",
     "display": "standalone",
-    "theme_color": "#ff0000"
+    "theme_color": "#4d7ee8"
   }
