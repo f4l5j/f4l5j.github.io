@@ -1,60 +1,18 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <title>Orgoglio Bresciano</title>
     <link rel="shortcut icon" href="icons/icon.ico"/>
     <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My First PWA</title>
-    <meta name="theme-color" content="#ff0000"/>
-    <link rel="manifest" href="manifest.json">
     <script>
-        //if browser support service worker
-        if('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('sw.js');
-        };
-      </script>
+        function init_clear() {
+            localStorage.clear();
+        }
+    </script>
 </head>
-<body>
-
-    <!--slide 1-->
-    <div class="flexslide">
-        <div class="slide1">
-          <img src="images/slide1.png" class="slide1img">
-          <h4 class="slidescritta">
-              Qui puoi trovare i drink che ti piacciono di più o scoprirne scoprirne di nuovi. Ne verranno aggiunti altri in futuro
-          </h4>
-          <button class="slide1-btn">Avanti</button>
-        </div>
-    </div>
-
-
-    <!--slide 2-->
-    <div class="flexslide">
-        <div class="slide2">
-          <img src="images/slide2.png" class="slideimg">
-          <h4 class="slidescritta">
-              Accettare i cookies fa scomparire il banner e servono a salvare nella memoria locale la visione delle informative ( ^ ‿ ^ )
-          </h4>
-          <button class="slide2-btn">Avanti</button>
-        </div>
-    </div>
-
-
-    <!--slide 3-->
-    <div class="flexslide">
-        <div class="slide3">
-          <img src="images/slide3.png" class="slideimg">
-          <h4 class="slidescritta">
-            Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
-          </h4>
-          <h4 class="slidescritta">
-            Se te li chiediamo servono solo a certe funzioni e non sono salvati da noi
-          </h4>
-          <button class="slide3-btn">Chiudi</button>
-        </div>
-    </div>
-
+<body onload="init_clear()">
+    
     <!--menu contestuale-->
     <div class="menu">
         <ul class="listmenu">
@@ -66,21 +24,50 @@
         </ul>
     </div>
 
+    <!--inizio interfaccia-->
 
-    <h4>
-      Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
-      Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
-      Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
-      Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
-      Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
-      Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
-      Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
-      Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
-      Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
-      Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
-    </h4>
+    <!--inizio navmenu-->
 
+    <div id="navmenu">
+        <a href="index.html"><img class="elemento_corrente_navmenu" src="icons/home.png"></a>
+        <a href="faq.html"><img class="elemento_navmenu" src="icons/faq.png"></a>
+        <a href="comuni.html"><img class="elemento_navmenu" src="icons/comuni.png"></a>
+        <a href="settings.html"><img class="elemento_navmenu" src="icons/settings.png"></a>
+    </div>
+    
+    <!--fine navmenu-->
 
+    <img class="mainlogo1" src="images/logo_blu.png" alt="logo">
+    <img class="mainlogo2" src="images/scritta.png" alt="logo">
+
+    <div id="staff_container">
+        <div class="staff_member">
+            <img class="staff_image" src="images/staff/nicholas.png">
+            <p class="staff_member_decription">Founder della pagina e di tutti i progetti Orgoglio Bresciano</p>
+        </div>
+        <div class="staff_member">
+            <img class="staff_image" src="images/staff/greata.png">
+            <p class="staff_member_decription">vice admin della pagina</p>
+        </div>
+        <div class="staff_member">
+            <img class="staff_image" src="images/staff/davide.png">
+            <p class="staff_member_decription">promoter e tiktoker della pagina</p>
+        </div>
+        <div class="staff_member">
+            <img class="staff_image" src="images/staff/matteo.png">
+            <p class="staff_member_decription">grafico</p>
+        </div>
+        <div class="staff_member">
+            <img class="staff_image" src="images/staff/debora.png">
+            <p class="staff_member_decription">promoter e admin</p>
+        </div>
+        <div class="staff_member">
+            <img class="staff_image" src="images/staff/francesco.png">
+            <p class="staff_member_decription">grafico</p>
+        </div>
+    </div>
+
+    <!--fine interfaccia-->
 
     <!--cookie alert-->
     <div class="flexcookies">
@@ -88,12 +75,11 @@
             <h4 id="cookiescritta">
                 Questo sito usa <a id="linkcookies"href="privacypolicy.html">cookie</a> che servono a salvare la conferma della visione delle informative o di schede
             </h4>
-            <button class="cookie-btn">ACCETTA</button>
+            <button class="cookie-btn">HO CAPITO</button>
         </div>
     </div>
 
     <!--script-->
     <script src="cookie.js"></script>
     <script src="contextmenu.js"></script>
-    <script src="slide.js"></script>
 </body>
