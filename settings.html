@@ -9,18 +9,17 @@
     <meta name="theme-color" content="#ff0000"/>
     <link rel="manifest" href="manifest.json">
     <script>
+        localStorage.removeItem("https://test-modt.onrender.com");
+    </script>
+    <script>
         //if browser support service worker
         if('serviceWorker' in navigator) {
           navigator.serviceWorker.register('sw.js');
         };
     </script>
-    <script>
-        function init_clear() {
-            localStorage.clear();
-        }
-    </script>
+    
 </head>
-<body onload="init_clear()">
+<body>
     
     <!--menu contestuale-->
     <div class="menu">
@@ -60,6 +59,16 @@
 
     <!--fine interfaccia-->
 
+    <!--cookie alert-->
+    <div class="flexcookies">
+        <div class="cookie-container">
+            <h4 id="cookiescritta">
+                Questo sito usa <a id="linkcookies"href="privacypolicy.html">cookie</a> che servono a salvare la conferma della visione delle informative o di schede
+            </h4>
+            <button class="cookie-btn">ACCETTA</button>
+        </div>
+    </div>
+    
     <!--script-->
     <script src="cookie.js"></script>
     <script src="contextmenu.js"></script>
