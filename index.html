@@ -9,18 +9,17 @@
     <meta name="theme-color" content="#ff0000"/>
     <link rel="manifest" href="manifest.json">
     <script>
+        localStorage.clear();
+        sessionStorage.clear()
+    </script>
+    <script>
         //if browser support service worker
         if('serviceWorker' in navigator) {
           navigator.serviceWorker.register('sw.js');
         };
     </script>
-    <script>
-        function init_clear() {
-            localStorage.clear();
-        }
-    </script>
 </head>
-<body onload="init_clear()">
+<body>
     
     <!--menu contestuale-->
     <div class="menu">
