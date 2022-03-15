@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <title>Orgoglio Bresciano - FAQ</title>
-    <link rel="shortcut icon" href="icons/icon.ico"/>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="#ff0000"/>
-    <link rel="manifest" href="manifest.json">
-    <script>
-        //if browser support service worker
-        if('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('sw.js');
-        };
-    </script>
-    <script>
-        function init_clear() {
-            localStorage.clear();
-        }
-    </script>
+  <link rel="shortcut icon" href="icons/icon.ico"/>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Orgoglio Bresciano - FAQ</title>
+  <meta name="theme-color" content="#ff0000"/>
+  <link rel="manifest" href="manifest.json">
+  <script>
+      //if browser support service worker
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+      };
+  </script>
+  <script>
+      function init_clear() {
+          localStorage.clear();
+      }
+  </script>
 </head>
 <body onload="init_clear()">
     
