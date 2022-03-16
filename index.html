@@ -9,9 +9,26 @@
     <meta name="theme-color" content="#ff0000"/>
     <link rel="manifest" href="manifest.json">
     <script>
-        localStorage.removeItem("https://test-modt.onrender.com");
-        location.reload(true);
-        window.history.forward(1);
+            navigator.serviceWorker.getRegistration()
+    .then(function(registration) {
+        if(registration){
+            registration.unregister()
+            .then(
+                function(success) {
+                    // if success = true, unregister was successful
+                    });
+            }
+        });
+    </script>
+    <script>
+        if ('caches' in window) {
+    caches.keys()
+      .then(function(keyList) {
+          return Promise.all(keyList.map(function(key) {
+              return caches.delete(key);
+          }));
+      })
+}
     </script>
     <script>
         //if browser support service worker
