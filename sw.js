@@ -1,28 +1,20 @@
-self.addEventListener('install', (event) => {
-  const cacheKey = 'MyFancyCacheName_v1';
-
-  event.waitUntil(caches.open(cacheKey).then((cache) => {
-    // Add all the assets in the array to the 'MyFancyCacheName_v1'
-    // `Cache` instance for later use.
-    return cache.addAll([
-      '/css/global.bc7b80b7.css',
-      '/css/home.fe5d0b23.css',
-      '/js/home.d3cc4ba4.js',
-      '/js/jquery.43ca4933.js'
-    ]);
-  }));
+// On install - caching the application shell
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open('sw-cache').then(function(cache) {
+      // cache any static files that make up the application shell
+      return cache.add('index.html');
+    })
+  );
 });
-self.addEventListener('activate', (event) => {
-  // Specify allowed cache keys
-  const cacheAllowList = ['MyFancyCacheName_v2'];
 
-  // Get all the currently active `Cache` instances.
-  event.waitUntil(caches.keys().then((keys) => {
-    // Delete all caches that aren't in the allow list:
-    return Promise.all(keys.map((key) => {
-      if (!cacheAllowList.includes(key)) {
-        return caches.delete(key);
-      }
-    }));
-  }));
+// On network request
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    // Try the cache
+    caches.match(event.request).then(function(response) {
+      //If response found return it, else fetch again
+      return response || fetch(event.request);
+    })
+  );
 });

@@ -9,25 +9,16 @@
     <meta name="theme-color" content="#ff0000"/>
     <link rel="manifest" href="manifest.json">
     <script>
-        // Don't register the service worker
-        // until the page has fully loaded
-        window.addEventListener('load', () => {
-          // Is service worker available?
-          if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js').then(() => {
-              console.log('Service worker registered!');
-            }).catch((error) => {
-              console.warn('Error registering service worker:');
-              console.warn(error);
-            });
-          }
-        });
-      </script>
-      <script>
-        navigator.serviceWorker.ready.then((registration) => {
-  registration.update();
-});
-      </script>
+        localStorage.removeItem("https://test-modt.onrender.com");
+        location.reload(true);
+        window.history.forward(1);
+    </script>
+    <script>
+        //if browser support service worker
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js');
+        };
+    </script>
 </head>
 <body>
     
