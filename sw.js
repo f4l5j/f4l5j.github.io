@@ -1,50 +1,28 @@
-const cacheArr = ['/'];
-const CACHE_NAME = 'cache-v10';
 self.addEventListener('install', (event) => {
-    console.log('worker is installed');
-    // event.waitUntil(
-    //     caches.open(CACHE_NAME).then((cache) => {
-    //       console.log("Opened cache");
-    //       cache.addAll(cacheArr).then(() => self.skipWaiting());
-    //     })
-    // );
+  const cacheKey = 'MyFancyCacheName_v1';
+
+  event.waitUntil(caches.open(cacheKey).then((cache) => {
+    // Add all the assets in the array to the 'MyFancyCacheName_v1'
+    // `Cache` instance for later use.
+    return cache.addAll([
+      '/css/global.bc7b80b7.css',
+      '/css/home.fe5d0b23.css',
+      '/js/home.d3cc4ba4.js',
+      '/js/jquery.43ca4933.js'
+    ]);
+  }));
 });
+self.addEventListener('activate', (event) => {
+  // Specify allowed cache keys
+  const cacheAllowList = ['MyFancyCacheName_v2'];
 
-self.addEventListener("activate", (event) => {
-    event.waitUntil(
-      caches.keys().then((cacheNames) => {
-        return Promise.all(
-          cacheNames.map((cacheName) => {
-            if (CACHE_NAME !== cacheName) {
-              return caches.delete(cacheName);
-            }
-          })
-        );
-      })
-    );
-  });
-
-//   self.addEventListener('fetch', (event) => {
-//     event.respondWith(
-//       caches.match(event.request)
-//         .then((response) => {
-//           // Cache hit - return response
-//           if (response) {
-//             return response;
-//           }
-//           return fetch(event.request).catch(() => caches.match(event.request));
-//         }
-//       )
-//     );
-//   });
-
-self.addEventListener("fetch", (fetchEvent) => {
-    fetchEvent.respondWith(
-        fetch(fetchEvent.request).then(res => {
-            const cacheRes = res.clone();
-            caches.open(CACHE_NAME)
-              .then(cache => cache.put(fetchEvent.request, cacheRes));
-            return res;
-        }).catch(() => caches.match(fetchEvent.request).then(res => res))
-    );
-  });
+  // Get all the currently active `Cache` instances.
+  event.waitUntil(caches.keys().then((keys) => {
+    // Delete all caches that aren't in the allow list:
+    return Promise.all(keys.map((key) => {
+      if (!cacheAllowList.includes(key)) {
+        return caches.delete(key);
+      }
+    }));
+  }));
+});

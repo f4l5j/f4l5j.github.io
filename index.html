@@ -9,13 +9,25 @@
     <meta name="theme-color" content="#ff0000"/>
     <link rel="manifest" href="manifest.json">
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./service-worker.js')
-                    .then(res => console.log(`register and the scope is ${res.scope}`));
-            })
-        }
-    </script>
+        // Don't register the service worker
+        // until the page has fully loaded
+        window.addEventListener('load', () => {
+          // Is service worker available?
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').then(() => {
+              console.log('Service worker registered!');
+            }).catch((error) => {
+              console.warn('Error registering service worker:');
+              console.warn(error);
+            });
+          }
+        });
+      </script>
+      <script>
+        navigator.serviceWorker.ready.then((registration) => {
+  registration.update();
+});
+      </script>
 </head>
 <body>
     
