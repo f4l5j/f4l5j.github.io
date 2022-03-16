@@ -28,7 +28,12 @@ a:hover {
 ::-webkit-scrollbar {
     width: 0px;
 }
-
+hr{
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    margin: 20px 5px 20px 5px;
+    width: 65%;
+}
 
 /*menu contestuale*/
 
@@ -204,8 +209,8 @@ a:hover {
 /*staff*/
 
 #staff_container{
-    margin-left:30px;
-    margin-right:30px;
+    margin-left:20px;
+    margin-right:20px;
     margin-top:70px;
     display: flex;
     justify-content: space-between;
@@ -230,7 +235,7 @@ a:hover {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height:120px;
+    height:140px;
     margin-top: -50px;
 }
 .staff_member_decription{
@@ -293,4 +298,136 @@ a:hover {
 .settings_header{
     font-family: 'Montserrat-Medium';
     text-align: center;
+}
+
+/*drinks*/
+
+/*flex dirinks*/
+#topscroll{
+    margin: 15px 0px 10px 0px;
+    font-family: 'Montserrat-Light';
+    color: #363636;
+    text-align: center;
+}
+#scrollingredienti{
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.scrollingrediente{
+    cursor: url('images/customcursor.cur'), auto;	
+    height: 120px;
+    width: 120px;
+    display: inline-block;
+    color: white;
+    box-shadow: 0px 7px 15px -3px rgba(0,0,0,0.88);
+    text-align: center;
+    margin: 15px 7px 11px 7px;
+    border-radius: 23px;
+    text-decoration: none;
+}
+.ingredient{
+    font-family: 'Montserrat-Light';
+    max-width: 70%;
+    margin: auto;
+    font-size: 18px;
+    line-height: 2.5em;
+    list-style-type: square;
+}
+.conteinerdrinks{
+    display:flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.flexdrinkbuttons{
+    display: flex;
+    justify-content:center;
+    flex-flow: row nowrap;
+    align-items: center;
+    cursor: url('images/customcursor.cur'), auto;
+    font-family: 'Montserrat-Medium';
+}
+.drinkbuttons{
+    display: inline;
+    color:black;
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 20px;
+    padding: 5px 8px 5px 8px;
+    cursor: url('images/customcursor.cur'), auto;	
+}
+.icondisclamer{
+    position: absolute;
+    height: 50px;
+    margin-top: -15px;
+    margin-left: -38px;
+}
+.alcolicon{
+    position: absolute;
+    right:35px;
+    top: 45px;
+    width: 45px;
+}
+.card{
+    box-shadow: 0 0px 4px 0 rgba(0,0,0,0.2);
+    width: 170px;
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom:4px;
+    margin-left: 3px;
+    margin-right: 3px;
+    border-radius: 18px;
+
+}
+.imggg{
+    width:100%;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+.container{
+    font-family: 'Montserrat-Medium';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    font-size: 18px;
+    padding-bottom: 5px;
+}.imgggschedule{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 380px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    box-shadow: 0px 9px 4px -6px rgba(0,0,0,0.75);
+    animation: imgggschedule 1s ease 0s 1 normal forwards;
+}
+.imgggschedulealcol{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 380px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    z-index: 10;
+    animation: imgggschedule 1s ease 0s 1 normal forwards;
+}
+@keyframes imgggschedule{
+    0%{
+      opacity: 0;z-index: 10;
+    }
+  
+    100%{
+      opacity: 1;z-index: 10;
+    }
+}
+.maintitle{
+    color: #000000;
+    text-align: center;
+    font-size: 100px;
+    margin-top: 90px;
+    margin-bottom: 0%;
+    font-family: 'Montserrat-Medium';
 }

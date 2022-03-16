@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Orgoglio Bresciano</title>
+    <link rel="shortcut icon" href="icons/icon.ico"/>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#ff0000"/>
+    <link rel="manifest" href="manifest.json">
+    <script>
+        navigator.serviceWorker.getRegistration()
+.then(function(registration) {
+    if(registration){
+        registration.unregister()
+        .then(
+            function(success) {
+                // if success = true, unregister was successful
+                });
+        }
+    });
+</script>
+<script>
+    if ('caches' in window) {
+caches.keys()
+  .then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+          return caches.delete(key);
+      }));
+  })
+}
+</script>
+<script>
+    //if browser support service worker
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    };
+</script>
+</head>
+<body>
+    
+    <!--menu contestuale-->
+    <div class="menu">
+        <ul class="listmenu">
+          <li class="menuoptionfirst" onclick="goBack()">Indietro</li>
+          <li class="menuoption" onclick="goForward()">Avanti</li>
+          <li class="menuoption" onclick="reload()">Ricarica</li>
+          <li class="menuoption" onclick="deleteItems()">Cancella cookie</li>
+          <li class="menuoptionlast" onclick="toggleFullScreen()">Fullscreen</li>
+        </ul>
+    </div>
+
+    <!--inizio interfaccia-->
+
+    <!--inizio navmenu-->
+
+    <div id="navmenu">
+        <a href="index.html"><img class="elemento_navmenu" src="icons/home.png"></a>
+        <a href="faq.html"><img class="elemento_navmenu" src="icons/faq.png"></a>
+        <a href="drinks.html"><img class="elemento_corrente_navmenu" src="icons/drinks.png"></a>
+        <a href="settings.html"><img class="elemento_navmenu" src="icons/settings.png"></a>
+    </div>
+    
+    <!--fine navmenu-->
+
+    <h1 class="maintitle">Drinks</h1><a href="drinks/alcol.html"><img class="alcolicon" src="icons/alcol.jpg" alt="Avatar"></a>
+    <h2 id="topscroll">Ingredienti usati</h2>
+    <div id="scrollingredienti">
+      <a href="drinks/ingredienti/rum.html"><img class="scrollingrediente" src="drinks/images/rum.jpg" alt="ingrediente"></a>
+      <a href="drinks/ingredienti/gin.html"><img class="scrollingrediente" src="drinks/images/gin.jpg" alt="ingrediente"></a>
+      <a href="drinks/ingredienti/vermut.html"><img class="scrollingrediente" src="drinks/images/vermut.jpg" alt="ingrediente"></a>
+      <a href="drinks/ingredienti/vodka.html"><img class="scrollingrediente" src="drinks/images/vodka.jpg" alt="ingrediente"></a>
+      <a href="drinks/ingredienti/acquatonica.html"><img class="scrollingrediente" src="drinks/images/acquatonica.jpg" alt="ingrediente"></a>
+    </div>
+    
+    <div align="middle">
+      <hr>
+    </div>
+    <div class="flexdrinkbuttons">
+      <a href="alcolici.html"><h3 class="drinkbuttons">Alcolici</h3></a><a href="analcolici.html"><h3 class="drinkbuttons">Analcolici</h3></a>
+    </div>
+    <div align="middle">
+      <hr>
+    </div>
+      <div class="conteinerdrinks">
+        <div class="card" onclick="location.href='drinks/allshookup.html'">
+            <img class="imggg" src="drinks/images/allshookup.jpg" alt="Avatar">
+          <div style="font-size:15px;" class="container">
+            <h2><b>All Shook Up</b></h2>
+            <!--
+            <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</h3>
+            <h3 class="itemdetails">Gusto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dolce</h3>
+            -->
+          </div>
+        </div>
+          <div class="card" onclick="location.href='drinks/aperol.html'">
+              <img class="imggg" src="drinks/images/aperol.jpg" alt="Avatar">
+              <img class="icondisclamer" src="icons/18+rossonero.png">
+            <div class="container">
+              <h2><b>Aperol</b></h2>
+              <!--
+              <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11</h3>
+              <h3 class="itemdetails">Gusto&nbsp;&nbsp;dolce amaro</h3>
+              -->
+            </div>
+          </div>
+          <div class="card" onclick="location.href='drinks/blackrussian.html'">
+              <img class="imggg" src="drinks/images/blackrussian.jpg" alt="Avatar">
+              <img class="icondisclamer" src="icons/18+rossonero.png">
+            <div style="font-size:15px;" class="container">
+              <h2><b>Black Russian</b></h2>
+              <!--
+              <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;27</h3>
+              <h3 class="itemdetails">Gusto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dolce</h3>
+              -->
+            </div>
+          </div>
+          <div class="card" onclick="location.href='drinks/campari.html'">
+              <img class="imggg" src="drinks/images/campari.jpg" alt="Avatar">
+              <img class="icondisclamer" src="icons/18+rossonero.png">
+            <div class="container">
+              <h2><b>Campari</b></h2>
+              <!--
+              <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25</h3>
+              <h3 class="itemdetails">Gusto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amaro</h3>
+              -->
+            </div>
+          </div>
+          <div class="card" onclick="location.href='drinks/cosmopolitan.html'">
+              <img class="imggg" src="drinks/images/cosmopolitan.jpg" alt="Avatar">
+              <img class="icondisclamer" src="icons/18+rossonero.png">
+            <div style="font-size:15px;" class="container">
+              <h2><b>Cosmopolitan</b></h2>
+              <!--
+              <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22</h3>
+              <h3 class="itemdetails">Gusto&nbsp;&nbsp;frutta-acido</h3>
+              -->
+            </div>
+          </div>
+          <div class="card" onclick="location.href='drinks/crodino.html'">
+              <img class="imggg" src="drinks/images/crodino.jpg" alt="Avatar">
+            <div class="container">
+              <h2><b>Crodino</b></h2>
+              <!--
+              <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</h3>
+              <h3 class="itemdetails">Gusto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;arancia</h3>
+              -->
+            </div>
+          </div>
+          <div class="card" onclick="location.href='drinks/gintonic.html'">
+            <img class="imggg" src="drinks/images/gintonic.jpg" alt="Avatar">
+            <img class="icondisclamer" src="icons/18+rossonero.png">
+          <div class="container">
+            <h2><b>Gin tonic</b></h2>
+            <!--
+            <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22</h3>
+            <h3 class="itemdetails">Gusto&nbsp;&nbsp;frutta-acido</h3>
+            -->
+          </div>
+        </div>
+          <div class="card" onclick="location.href='drinks/martini.html'">
+              <img class="imggg" src="drinks/images/martini.jpg" alt="Avatar">
+              <img class="icondisclamer" src="icons/18+rossonero.png">
+            <div class="container">
+              <h2><b>Martini</b></h2>
+              <!--
+              <h3 class="itemdetails">Grado alcolico&nbsp;29,8°</h3>
+              <h3 style="font-size:13px;" class="itemdetails">Gusto&nbsp;&nbsp;&nbsp;asciutto-forte</h3>
+              -->
+            </div>
+          </div>
+          <div class="card" onclick="location.href='drinks/mojito.html'">
+              <img class="imggg" src="drinks/images/mojito.jpg" alt="Avatar">
+              <img class="icondisclamer" src="icons/18+rossonero.png">
+            <div class="container">
+              <h2><b>Mojito</b></h2>
+              <!--
+              <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;11-22</h3>
+              <h3 class="itemdetails">Gusto&nbsp;&nbsp;&nbsp;&nbsp;menta rum</h3>
+              -->
+            </div>
+          </div>
+          <div class="card" onclick="location.href='drinks/negroni.html'">
+              <img class="imggg" src="drinks/images/negroni.jpg" alt="Avatar">
+              <img class="icondisclamer" src="icons/18+rossonero.png">
+            <div class="container">
+              <h2><b>Negroni</b></h2>
+              <!--
+              <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;28</h3>
+              <h3 class="itemdetails">Gusto&nbsp;&nbsp;dolce amaro</h3>
+              -->
+            </div>
+          </div>
+          <div class="card" onclick="location.href='drinks/negronisbagliato.html'">
+            <img class="imggg" src="drinks/images/negronisbagliato.jpg" alt="Avatar">
+            <img class="icondisclamer" src="icons/18+rossonero.png">
+          <div class="container">
+            <h2 style="font-size:18px;"><b>Negroni Sbagliato</b></h2>
+            <!--
+            <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;28</h3>
+            <h3 class="itemdetails">Gusto&nbsp;&nbsp;dolce amaro</h3>
+            -->
+          </div>
+        </div>
+          <div class="card" onclick="location.href='drinks/pirlo.html'">
+              <img class="imggg" src="drinks/images/pirlo.jpg" alt="Avatar">
+              <img class="icondisclamer" src="icons/18+rossonero.png">
+            <div class="container">
+              <h2><b>Pirlo</b></h2>
+              <!--
+              <h3 class="itemdetails" style="font-size:12px;">Grado alcolico15-45 (15)</h3>
+              <h3 class="itemdetails">Gusto&nbsp;&nbsp;&nbsp;&nbsp;amaro vino</h3>
+              -->
+            </div>
+          </div>
+          <div class="card" onclick="location.href='drinks/redsunset.html'">
+              <img class="imggg" src="drinks/images/redsunset.jpg" alt="Avatar">
+            <div class="container">
+              <h2><b>Red sunset</b></h2>
+              <!--
+              <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</h3>
+              <h3 class="itemdetails">Gusto frutta menta</h3>
+              -->
+            </div>
+          </div>
+          <div class="card" onclick="location.href='drinks/roselemonspritzer.html'">
+              <img class="imggg" src="drinks/images/roselemonspritzer.jpg" alt="Avatar">
+            <div style="font-size:11px;" class="container">
+              <h2><b>Rose Lemon Spritzer</b></h2>
+              <!--
+              <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</h3>
+              <h3 class="itemdetails">Gusto&nbsp;&nbsp;&nbsp;frutta miele</h3>
+              -->
+            </div>
+          </div>
+          <div class="card" onclick="location.href='drinks/shirleytemple.html'">
+            <img class="imggg" src="drinks/images/shirleytemple.jpg" alt="Avatar">
+          <div style="font-size:15px;" class="container">
+            <h2><b>Shirley Temple</b></h2>
+            <!--
+            <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</h3>
+            <h3 class="itemdetails">Gusto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dolciastro</h3>
+            -->
+          </div>
+        </div>
+          <div class="card" onclick="location.href='drinks/switchel.html'">
+              <img class="imggg" src="drinks/images/switchel.jpg" alt="Avatar">
+            <div class="container">
+              <h2><b>Switchel</b></h2>
+              <!--
+              <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</h3>
+              <h3 class="itemdetails">Gusto&nbsp;&nbsp;rinfrescante</h3>
+              -->
+            </div>
+          </div>
+          <div class="card" onclick="location.href='drinks/virgincolada.html'">
+              <img class="imggg" src="drinks/images/virgincolada.jpg" alt="Avatar">
+            <div style="font-size:15px;" class="container">
+              <h2><b>Virgin Colada</b></h2>
+              <!--
+              <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</h3>
+              <h3 class="itemdetails">Gusto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dolce</h3>
+              -->
+            </div>
+          </div>
+          <div class="card" onclick="location.href='drinks/virginroyalhawaiian.html'">
+              <img class="imggg" src="drinks/images/virginroyalhawaiian.jpg" alt="Avatar">
+            <div style="font-size:10px;" class="container">
+              <h2><b>Virgin Royal Hawaiian</b></h2>
+              <!--
+              <h3 class="itemdetails">Grado alcolico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</h3>
+              <h3 class="itemdetails">Gusto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dolce</h3>
+              -->
+            </div>
+          </div>
+      </div>
+
+    <!--fine interfaccia-->
+
+    <!--cookie alert-->
+    <div class="flexcookies">
+        <div class="cookie-container">
+            <h4 id="cookiescritta">
+                Questo sito usa <a id="linkcookies"href="privacypolicy.html">cookie</a> che servono a salvare la conferma della visione delle informative o di schede
+            </h4>
+            <button class="cookie-btn">ACCETTA</button>
+        </div>
+    </div>
+
+    <!--script-->
+    <script src="cookie.js"></script>
+    <script src="contextmenu.js"></script>
+</body>
