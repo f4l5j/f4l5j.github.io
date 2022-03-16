@@ -1,20 +1,50 @@
-// On install - caching the application shell
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open('sw-cache').then(function(cache) {
-      // cache any static files that make up the application shell
-      return cache.add('index.html');
-    })
-  );
+const cacheArr = ['/'];
+const CACHE_NAME = 'cache-v10';
+self.addEventListener('install', (event) => {
+    console.log('worker is installed');
+    // event.waitUntil(
+    //     caches.open(CACHE_NAME).then((cache) => {
+    //       console.log("Opened cache");
+    //       cache.addAll(cacheArr).then(() => self.skipWaiting());
+    //     })
+    // );
 });
 
-// On network request
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    // Try the cache
-    caches.match(event.request).then(function(response) {
-      //If response found return it, else fetch again
-      return response || fetch(event.request);
-    })
-  );
-});
+self.addEventListener("activate", (event) => {
+    event.waitUntil(
+      caches.keys().then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cacheName) => {
+            if (CACHE_NAME !== cacheName) {
+              return caches.delete(cacheName);
+            }
+          })
+        );
+      })
+    );
+  });
+
+//   self.addEventListener('fetch', (event) => {
+//     event.respondWith(
+//       caches.match(event.request)
+//         .then((response) => {
+//           // Cache hit - return response
+//           if (response) {
+//             return response;
+//           }
+//           return fetch(event.request).catch(() => caches.match(event.request));
+//         }
+//       )
+//     );
+//   });
+
+self.addEventListener("fetch", (fetchEvent) => {
+    fetchEvent.respondWith(
+        fetch(fetchEvent.request).then(res => {
+            const cacheRes = res.clone();
+            caches.open(CACHE_NAME)
+              .then(cache => cache.put(fetchEvent.request, cacheRes));
+            return res;
+        }).catch(() => caches.match(fetchEvent.request).then(res => res))
+    );
+  });
