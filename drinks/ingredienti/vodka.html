@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Vodka</title>
+    <link rel="shortcut icon" href="../../icons/icon.ico"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <!--slide 1-->
+    <div class="flexslide">
+        <div class="slide1">
+          <img src="../../images/slide1.png" class="slide1img">
+          <h4 class="slidescritta">
+              Qui puoi trovare i drink che ti piacciono di più o scoprirne di nuovi. Ne verranno aggiunti altri in futuro
+          </h4>
+          <button class="slide1-btn">Avanti</button>
+        </div>
+    </div>
+
+
+    <!--slide 2-->
+    <div class="flexslide">
+        <div class="slide2">
+          <img src="../../images/slide2.png" class="slideimg">
+          <h4 class="slidescritta">
+              Accettare i cookies fa scomparire il banner e servono a salvare nella memoria locale la visione delle informative ( ^ ‿ ^ )
+          </h4>
+          <button class="slide2-btn">Avanti</button>
+        </div>
+    </div>
+
+
+    <!--slide 3-->
+    <div class="flexslide">
+        <div class="slide3">
+          <img src="../../images/slide3.png" class="slideimg">
+          <h4 class="slidescritta">
+            Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
+          <br><br>
+            Se te li chiediamo servono solo a certe funzioni e non sono salvati da noi
+          </h4>
+          <button class="slide3-btn">Chiudi</button>
+        </div>
+    </div>
+
+    <!--menu contestuale-->
+    <div class="menu">
+        <ul class="listmenu">
+          <li class="menuoptionfirst" onclick="goBack()">Indietro</li>
+          <li class="menuoption" onclick="goForward()">Avanti</li>
+          <li class="menuoption" onclick="reload()">Ricarica</li>
+          <li class="menuoption" onclick="reviewpresentation()">Rivedi presentazione</li>
+          <li class="menuoptionlast" onclick="toggleFullScreen()">Fullscreen</li>
+        </ul>
+    </div>
+
+    <!--navmenu-->
+    <img class="navmenuopenbtn" src="../../icons/menu.png" onclick="aprinav()" alt="menu">
+    <div id="idnavmenu" class="navmenu">
+      <img class="navmenuclosebtn" src="../../icons/indietro.png" onclick="chiudinav()" alt="back">
+      <a class="navmenuoption" href="../../index.html">Home</a>
+      <a class="navmenuoption" href="../../drinks.html">Drinks</a>
+      <a class="navmenuoption" href="../../faq.html">FAQ</a>
+      <a class="navmenuoption" href="../../policy.html">Legale</a>
+    </div>
+    
+    <h1 class="maintitle">Vodka</h1>
+  <img src="../images/vodka2.jpg" class="imgggschedule" alt="ingredient">
+  <p class="paragrafo">La vodka è un superalcolico ad l'alta concentrazione di etanolo. Si ottiene distillando mosti di cereali o patate</p>
+  <p class="paragrafo">Componenti</p>
+  <ul>
+    <li class="ingredient">Acqua</li>
+    <li class="ingredient">Alcol tra 37,5% e 60%</li>
+    <li class="ingredient">Aromi (opzionale)</li>
+  </ul>
+  <p class="paragrafo">L'origine è contesa tra Russia e Polonia ma rimane non molto chiara dovuta ai pochi documenti o prove a disposizione. Come visto negli ingredienti esiste la Vodka pura cioè senza aromi aggiuntivi e quella con aromi aggiunti. Viene usata spesso per preparare altri cocktails</p>
+    
+    <!--cookie alert-->
+    <div class="flexcookies">
+        <div class="cookie-container">
+            <h4 id="cookiescritta">
+                Questo sito usa <a id="linkcookies" href="../../privacypolicy.html">cookie</a> che servono per alcune funzioni<br><br>
+                Accettali per continuare sul sito
+            </h4>
+            <button class="cookie-btn">ACCETTA</button>
+        </div>
+    </div>
+
+    <!--script-->
+    <script src="../../navnmenu.js"></script>
+    <script src="../../contextmenu.js"></script>
+    <script src="../../cookie-slide.js"></script>
+</body>

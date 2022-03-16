@@ -1,0 +1,116 @@
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Vermut</title>
+    <link rel="shortcut icon" href="../../icons/icon.ico"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <!--slide 1-->
+    <div class="flexslide">
+        <div class="slide1">
+          <img src="../../images/slide1.png" class="slide1img">
+          <h4 class="slidescritta">
+              Qui puoi trovare i drink che ti piacciono di più o scoprirne di nuovi. Ne verranno aggiunti altri in futuro
+          </h4>
+          <button class="slide1-btn">Avanti</button>
+        </div>
+    </div>
+
+
+    <!--slide 2-->
+    <div class="flexslide">
+        <div class="slide2">
+          <img src="../../images/slide2.png" class="slideimg">
+          <h4 class="slidescritta">
+              Accettare i cookies fa scomparire il banner e servono a salvare nella memoria locale la visione delle informative ( ^ ‿ ^ )
+          </h4>
+          <button class="slide2-btn">Avanti</button>
+        </div>
+    </div>
+
+
+    <!--slide 3-->
+    <div class="flexslide">
+        <div class="slide3">
+          <img src="../../images/slide3.png" class="slideimg">
+          <h4 class="slidescritta">
+            Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
+          <br><br>
+            Se te li chiediamo servono solo a certe funzioni e non sono salvati da noi
+          </h4>
+          <button class="slide3-btn">Chiudi</button>
+        </div>
+    </div>
+
+    <!--menu contestuale-->
+    <div class="menu">
+        <ul class="listmenu">
+          <li class="menuoptionfirst" onclick="goBack()">Indietro</li>
+          <li class="menuoption" onclick="goForward()">Avanti</li>
+          <li class="menuoption" onclick="reload()">Ricarica</li>
+          <li class="menuoption" onclick="reviewpresentation()">Rivedi presentazione</li>
+          <li class="menuoptionlast" onclick="toggleFullScreen()">Fullscreen</li>
+        </ul>
+    </div>
+
+    <!--navmenu-->
+    <img class="navmenuopenbtn" src="../../icons/menu.png" onclick="aprinav()" alt="menu">
+    <div id="idnavmenu" class="navmenu">
+      <img class="navmenuclosebtn" src="../../icons/indietro.png" onclick="chiudinav()" alt="back">
+      <a class="navmenuoption" href="../../index.html">Home</a>
+      <a class="navmenuoption" href="../../drinks.html">Drinks</a>
+      <a class="navmenuoption" href="../../faq.html">FAQ</a>
+      <a class="navmenuoption" href="../../policy.html">Legale</a>
+    </div>
+    
+    <h1 class="maintitle">Vermut</h1>
+  <img src="../images/vermut2.jpg" class="imgggschedule" alt="ingredient">
+  <p class="paragrafo">Il Vermut che ha diverse piccole varianti del suo nome, è un vino creato a Torino da Antonio Benedetto Carpano nel 1786. La gradazione alcolica è prestabilita ma varia a seconda del tipo di Vermut. Deve avere almeno il 75% di vino bianco con aromi e zuccheri vari e contenere delle artemisie</p>
+  
+  <table>
+    <tbody>
+    <tr>
+    <td id="tdfirst">&nbsp;</td>
+    <td id="bianco">Vermut bianco</td>
+    <td id="rosso">Vermut rosso</td>
+    <td id="secco">Vermut secco</td>
+    </tr>
+    <tr>
+    <td>Gradazion alcolica</td>
+    <td>15,5%-22%</td>
+    <td>15,5%-22%</td>
+    <td>18%-22%</td>
+    </tr>
+    <tr>
+    <td>Tenore zuccherino</td>
+    <td>minimo 14%</td>
+    <td>minimo 14%</td>
+    <td>7%</td>
+    </tr>
+    </tbody>
+    </table>
+  
+  <p class="paragrafo">Spesso è usato per preparare altri cocktails. Questo vino ha la denominazione di indicazione geografica quindi si ricorda che la produzione è originaria del piemonte ed è stato inserito nell’elenco dei prodotti italiani</p>
+    <p class="paragrafo">Fonte Wikipedia</p>
+    
+    <!--cookie alert-->
+    <div class="flexcookies">
+        <div class="cookie-container">
+            <h4 id="cookiescritta">
+                Questo sito usa <a id="linkcookies" href="../../privacypolicy.html">cookie</a> che servono per alcune funzioni<br><br>
+                Accettali per continuare sul sito
+            </h4>
+            <button class="cookie-btn">ACCETTA</button>
+        </div>
+    </div>
+
+    <!--script-->
+    <script src="../../navnmenu.js"></script>
+    <script src="../../contextmenu.js"></script>
+    <script src="../../cookie-slide.js"></script>
+</body>

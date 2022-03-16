@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Aperol</title>
+    <link rel="shortcut icon" href="../icons/icon.ico"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!--slide 1-->
+    <div class="flexslide">
+        <div class="slide1">
+          <img src="../images/slide1.png" class="slide1img">
+          <h4 class="slidescritta">
+              Qui puoi trovare i drink che ti piacciono di più o scoprirne di nuovi. Ne verranno aggiunti altri in futuro
+          </h4>
+          <button class="slide1-btn">Avanti</button>
+        </div>
+    </div>
+
+
+    <!--slide 2-->
+    <div class="flexslide">
+        <div class="slide2">
+          <img src="../images/slide2.png" class="slideimg">
+          <h4 class="slidescritta">
+              Accettare i cookies fa scomparire il banner e servono a salvare nella memoria locale la visione delle informative ( ^ ‿ ^ )
+          </h4>
+          <button class="slide2-btn">Avanti</button>
+        </div>
+    </div>
+
+
+    <!--slide 3-->
+    <div class="flexslide">
+        <div class="slide3">
+          <img src="../images/slide3.png" class="slideimg">
+          <h4 class="slidescritta">
+            Ricorda che non abbiamo server di raccolta o database quindi non possiamo raccogliere i tuoi dati personali
+          <br><br>
+            Se te li chiediamo servono solo a certe funzioni e non sono salvati da noi
+          </h4>
+          <button class="slide3-btn">Chiudi</button>
+        </div>
+    </div>
+
+    <!--menu contestuale-->
+    <div class="menu">
+        <ul class="listmenu">
+          <li class="menuoptionfirst" onclick="goBack()">Indietro</li>
+          <li class="menuoption" onclick="goForward()">Avanti</li>
+          <li class="menuoption" onclick="reload()">Ricarica</li>
+          <li class="menuoption" onclick="reviewpresentation()">Rivedi presentazione</li>
+          <li class="menuoptionlast" onclick="toggleFullScreen()">Fullscreen</li>
+        </ul>
+    </div>
+
+    <!--navmenu-->
+    <img class="navmenuopenbtn" src="../icons/menu.png" onclick="aprinav()" alt="menu">
+    <div id="idnavmenu" class="navmenu">
+      <img class="navmenuclosebtn" src="../icons/indietro.png" onclick="chiudinav()" alt="back">
+      <a class="navmenuoption" href="../index.html">Home</a>
+      <a class="navmenuoption" href="../drinks.html">Drinks</a>
+      <a class="navmenuoption" href="../faq.html">FAQ</a>
+      <a class="navmenuoption" href="../policy.html">Legale</a>
+    </div>
+    
+    <h1 class="maintitle">Aperol</h1>
+  <img src="images/aperol2.jpg" class="imgggschedule"alt="drink">
+  <br>
+  <div class="rapidinfo">
+    <div class="flexitemdetails">
+      <h3 class="itemdetails">Gusto</h3><h3 class="itemdetails">dolce-amaro</h3>
+    </div>
+    <div class="flexitemdetails">
+      <h3 class="itemdetails">Grado alcolico</h3><h3 class="itemdetails">11</h3>
+    </div>
+    <img src="../icons/senzaglutine.png" class="certificazioni" alt="certificazioni">
+    <img src="../icons/senzalatte.png" class="certificazioni" alt="certificazioni">
+  </div>
+  <p class="paragrafo">L'Aperol è un bevanda alcolica di origine italiana con un colore rosso-arancio. È uno tra i più famosi aperitivo conosciuti</p>
+  <p class="paragrafo">La ricetta è segreta ma prevede l'infusione in alcol di</p>
+  <ul>
+    <li class="ingredient">Arancia</li>
+    <li class="ingredient">Rabarbaro</li>
+    <li class="ingredient">Radici</li>
+  </ul>
+  <p class="paragrafo">La sua gradazione alcolica è 11° ma in Germania viene venduta anche da 15°</p>
+    
+    <!--cookie alert-->
+    <div class="flexcookies">
+        <div class="cookie-container">
+            <h4 id="cookiescritta">
+                Questo sito usa <a id="linkcookies" href="../policy.html">cookie</a> che servono per alcune funzioni<br><br>
+                Accettali per continuare sul sito
+            </h4>
+            <button class="cookie-btn">ACCETTA</button>
+        </div>
+    </div>
+
+    <!--script-->
+    <script src="../navnmenu.js"></script>
+    <script src="../contextmenu.js"></script>
+    <script src="../cookie-slide.js"></script>
+</body>
