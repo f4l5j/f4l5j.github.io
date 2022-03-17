@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link rel="shortcut icon" href="icons/icon.ico"/>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <title>ciao</title>
+</head>
+<body>
+    
+    <!--menu contestuale-->
+    <div class="menu">
+        <ul class="listmenu">
+          <li class="menuoptionfirst" onclick="goBack()">Indietro</li>
+          <li class="menuoption" onclick="goForward()">Avanti</li>
+          <li class="menuoption" onclick="reload()">Ricarica</li>
+          <li class="menuoption" onclick="deleteItems()">Cancella cookie</li>
+          <li class="menuoptionlast" onclick="toggleFullScreen()">Fullscreen</li>
+        </ul>
+    </div>
+
+    <!--inizio interfaccia-->
+
+    <!--inizio navmenu-->
+
+    
+    
+    <!--fine navmenu-->
+
+    
+    <!--fine interfaccia-->
+
+    <!--cookie alert-->
+    <div class="flexcookies">
+        <div class="cookie-container">
+            <h4 id="cookiescritta">
+                Questo sito usa <a id="linkcookies"href="privacypolicy.html">cookie</a> che servono a salvare la conferma della visione delle informative o di schede
+            </h4>
+            <button class="cookie-btn">ACCETTA</button>
+        </div>
+    </div>
+
+    <!--script-->
+    <script src="cookie.js"></script>
+    <script src="contextmenu.js"></script>
+</body>
